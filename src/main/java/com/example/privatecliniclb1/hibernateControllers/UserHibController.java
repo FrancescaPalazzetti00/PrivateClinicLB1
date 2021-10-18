@@ -5,6 +5,7 @@ import com.example.privatecliniclb1.ds.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -140,7 +141,7 @@ public class UserHibController {
         CriteriaQuery<User> query = cb.createQuery(User.class);
         Root<User> root = query.from(User.class);
         query.select(root).where(cb.like(root.get("login"), login));
-        query.select(root).where(cb.like(root.get("password"), psw));
+        query.select(root).where(cb.like(root.get("psw"), psw));
         Query q = em.createQuery(query);
         return (User) q.getSingleResult();
     }
