@@ -20,7 +20,7 @@
             <TableColumn fx:id="colAddress" prefWidth="75.0" text="address" />
             <TableColumn fx:id="colSecName" prefWidth="75.0" text="sec_name" />
             <TableColumn fx:id="colSecSur" prefWidth="75.0" text="sec_surname" />
-            <TableColumn fx:id="colPhone" prefWidth="75.0" text="sec_phone" />
+            <TableColumn fx:id="colSecPhone" prefWidth="75.0" text="sec_phone" />
             <TableColumn fx:id="colSecAddress" prefWidth="75.0" text="sec_address" />
             <TableColumn fx:id="dummyField" prefWidth="75.0" text="Action" />
         </columns>

@@ -17,7 +17,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.io.IOException;
 
-import java.sql.SQLException;
 
 import static com.example.privatecliniclb1.control.DbUtils.alertMessage;
 
@@ -32,8 +31,8 @@ public class LoginWindow {
 
     public void validateAndLogin(ActionEvent actionEvent) throws IOException {
 
-        User user = userHibController.getUserByLoginData(loginF.getText(), pswF.getText());
         if (!loginF.getText().trim().isEmpty() && !pswF.getText().trim().isEmpty()){
+            User user = userHibController.getUserByLoginData(loginF.getText(), pswF.getText());
             if (user != null) {
                 FXMLLoader fxmlLoader = new FXMLLoader(StartProgram.class.getResource("all-users-form.fxml"));
                 Parent root = fxmlLoader.load();
@@ -44,13 +43,10 @@ public class LoginWindow {
                 stage.setScene(scene);
                 stage.initModality(Modality.APPLICATION_MODAL);
                 stage.showAndWait();
-            }else{
-                alertMessage("Wrong input data, no such user found");
             }
         }else {
             alertMessage("Please, fill out all fields");
         }
-
     }
 
     public void openSignUpForm(ActionEvent actionEvent) throws IOException {

@@ -82,7 +82,7 @@ public class AllUsersForm implements Initializable {
         colEmail.setCellFactory(TextFieldTableCell.forTableColumn());
         colEmail.setOnEditCommit(t -> t.getTableView().getItems().get(
                 t.getTablePosition().getRow()).setEmail(t.getNewValue()));
-        colAddress.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colAddress.setCellFactory(TextFieldTableCell.forTableColumn());
         colAddress.setOnEditCommit(t -> t.getTableView().getItems().get(
                 t.getTablePosition().getRow()).setAddress(t.getNewValue()));
