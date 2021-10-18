@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="565.0" prefWidth="368.0" style="-fx-background-color: CCFFE5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.privatecliniclb1.fxControllers.SignUpForm">
+   <children>
+      <TextField fx:id="loginF" layoutX="109.0" layoutY="38.0" />
+      <PasswordField fx:id="passwordF" layoutX="109.0" layoutY="92.0" />
+      <RadioButton fx:id="radioS" layoutX="48.0" layoutY="192.0" mnemonicParsing="false" onAction="#enableFields" selected="true" text="Secretary" textAlignment="CENTER">
+         <toggleGroup>
+            <ToggleGroup fx:id="UserType" />
+         </toggleGroup>
+         <font>
+            <Font name="Cambria" size="13.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="radioP" layoutX="232.0" layoutY="192.0" mnemonicParsing="false" onAction="#enableFields" text="Patient" toggleGroup="$UserType">
+         <font>
+            <Font name="Cambria" size="13.0" />
+         </font></RadioButton>
+      <TextField fx:id="secAddressF" layoutX="25.0" layoutY="398.0" prefHeight="26.0" prefWidth="134.0" />
+      <TextField fx:id="secNameF" layoutX="25.0" layoutY="235.0" prefHeight="26.0" prefWidth="134.0" />
+      <TextField fx:id="patNameF" layoutX="205.0" layoutY="235.0" prefHeight="26.0" prefWidth="134.0" />
+      <Button layoutX="130.0" layoutY="501.0" mnemonicParsing="false" onAction="#createUser" style="-fx-background-color: #009999;" text="CREATE USER">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font></Button>
+      <PasswordField fx:id="repeatPasswordF" layoutX="109.0" layoutY="147.0" />
+      <Label layoutX="110.0" layoutY="22.0" text="Enter login:">
+         <font>
+            <Font name="Franklin Gothic Demi Cond" size="14.0" />
+         </font></Label>
+      <Label layoutX="110.0" layoutY="73.0" prefHeight="18.0" prefWidth="86.0" text="Enter password:">
+         <font>
+            <Font name="Franklin Gothic Demi Cond" size="14.0" />
+         </font></Label>
+      <Label layoutX="111.0" layoutY="131.0" text="Repeat password:">
+         <font>
+            <Font name="Franklin Gothic Demi Cond" size="14.0" />
+         </font></Label>
+      <Label layoutX="24.0" layoutY="378.0" prefHeight="18.0" prefWidth="51.0" text="Address">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font></Label>
+      <Button layoutX="302.0" layoutY="9.0" mnemonicParsing="false" onAction="#returnToLogin" style="-fx-background-color: #00BCB8;" text="Cancel" />
+      <Label layoutX="24.0" layoutY="272.0" prefHeight="18.0" prefWidth="61.0" text="Surname">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font></Label>
+      <TextField fx:id="secSurnameF" layoutX="25.0" layoutY="291.0" prefHeight="26.0" prefWidth="134.0" />
+      <TextField fx:id="secPhoneF" layoutX="25.0" layoutY="344.0" prefHeight="26.0" prefWidth="134.0" />
+      <Label layoutX="25.0" layoutY="216.0" text="Name">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font></Label>
+      <Label layoutX="22.0" layoutY="326.0" prefHeight="18.0" prefWidth="84.0" text="PhonNumber">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font></Label>
+      <TextField fx:id="patSurnameF" layoutX="205.0" layoutY="291.0" prefHeight="26.0" prefWidth="134.0" />
+      <TextField fx:id="patTaxCodeF" layoutX="205.0" layoutY="344.0" prefHeight="26.0" prefWidth="134.0" />
+      <TextField fx:id="patAddressF" layoutX="205.0" layoutY="398.0" prefHeight="26.0" prefWidth="134.0" />
+      <TextField fx:id="patEmailF" layoutX="205.0" layoutY="453.0" prefHeight="26.0" prefWidth="134.0" />
+      <Label layoutX="205.0" layoutY="216.0" text="Name">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font></Label>
+      <Label layoutX="205.0" layoutY="273.0" prefHeight="18.0" prefWidth="61.0" text="Surname">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font></Label>
+      <Label layoutX="205.0" layoutY="435.0" prefHeight="18.0" prefWidth="51.0" text="Email">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font></Label>
+      <Label layoutX="205.0" layoutY="378.0" prefHeight="18.0" prefWidth="51.0" text="Address">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font></Label>
+      <Label layoutX="205.0" layoutY="326.0" prefHeight="18.0" prefWidth="61.0" text="TaxCode">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

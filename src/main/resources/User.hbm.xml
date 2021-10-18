@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD  3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!--    <class name="com.example.privatecliniclb1.ds.User" table="users">
+        <meta attribute="class-description">User class mapping to user table</meta>
+        <id name="id" type="integer" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="login" column="login" type="string"/>
+        <property name="psw" column="password" type="string"/>
+        <property name="dateCreated" column="date_created" type="date"/>
+        <property name="dateModified" column="date_modified" type="date"/>
+    </class>-->
+</hibernate-mapping>
