@@ -1,8 +1,6 @@
 package com.example.privatecliniclb1.fxControllers;
 
-
 import com.example.privatecliniclb1.StartProgram;
-import com.example.privatecliniclb1.control.DbUtils;
 import com.example.privatecliniclb1.ds.Patient;
 import com.example.privatecliniclb1.ds.Secretary;
 import com.example.privatecliniclb1.hibernateControllers.UserHibController;
@@ -21,8 +19,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 

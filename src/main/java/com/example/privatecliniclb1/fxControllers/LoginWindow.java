@@ -34,7 +34,7 @@ public class LoginWindow {
         if (!loginF.getText().trim().isEmpty() && !pswF.getText().trim().isEmpty()){
             User user = userHibController.getUserByLoginData(loginF.getText(), pswF.getText());
             if (user != null) {
-                FXMLLoader fxmlLoader = new FXMLLoader(StartProgram.class.getResource("all-users-form.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(StartProgram.class.getResource("menu-window.fxml"));
                 Parent root = fxmlLoader.load();
 
                 Scene scene = new Scene(root);

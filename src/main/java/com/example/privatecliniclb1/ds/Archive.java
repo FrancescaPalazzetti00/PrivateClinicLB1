@@ -5,6 +5,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class Archive implements Serializable {
     private int id;
     private String archiveName;
     private String archiveDescription;
-    private Date dateCreated;
+    private LocalDate dateCreated;
     private Date endDate;
     @ManyToMany
     private List<User> responsibleUsers;
@@ -33,7 +34,7 @@ public class Archive implements Serializable {
     private List<User> admin;
 
 
-    public Archive(int id, String archiveName, String archiveDescription, Date dateCreated, Date endDate, List<User> responsibleUsers, List<Patient> patients, List<Folder> folders) {
+    public Archive(int id, String archiveName, String archiveDescription, LocalDate dateCreated, Date endDate, List<User> responsibleUsers, List<Patient> patients, List<Folder> folders) {
         this.id = id;
         this.archiveName = archiveName;
         this.archiveDescription = archiveDescription;
@@ -48,6 +49,11 @@ public class Archive implements Serializable {
 
     }
 
+    public Archive(String archiveName, String archiveDescription) {
+        this.archiveName = archiveName;
+        this.archiveDescription = archiveDescription;
+        this.dateCreated = LocalDate.now();
+    }
 
     public int getId() {
         return id;
@@ -73,11 +79,11 @@ public class Archive implements Serializable {
         this.archiveDescription = archiveDescription;
     }
 
-    public Date getDateCreated() {
+    public LocalDate getDateCreated() {
         return dateCreated;
     }
 
-    public void setDateCreated(Date dateCreated) {
+    public void setDateCreated(LocalDate dateCreated) {
         this.dateCreated = dateCreated;
     }
 

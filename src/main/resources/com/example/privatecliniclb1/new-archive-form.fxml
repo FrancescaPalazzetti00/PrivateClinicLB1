@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="399.0" prefWidth="372.0" style="-fx-background-color: CCFFE5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.privatecliniclb1.fxControllers.NewArchiveForm">
+   <children>
+      <TextField fx:id="archiveTitle" layoutX="119.0" layoutY="66.0" prefHeight="26.0" prefWidth="238.0" />
+      <TextArea fx:id="archiveDesc" layoutX="119.0" layoutY="114.0" prefHeight="170.0" prefWidth="238.0" />
+      <Label layoutX="116.0" layoutY="20.0" prefHeight="26.0" prefWidth="139.0" text="NEW ARCHIVE">
+         <font>
+            <Font name="Cambria" size="21.0" />
+         </font></Label>
+      <Label layoutX="14.0" layoutY="68.0" text="Title:">
+         <font>
+            <Font name="Franklin Gothic Medium Cond" size="18.0" />
+         </font></Label>
+      <Label layoutX="12.0" layoutY="114.0" text="Description:">
+         <font>
+            <Font name="Franklin Gothic Medium Cond" size="18.0" />
+         </font></Label>
+      <Button layoutX="150.0" layoutY="329.0" mnemonicParsing="false" onAction="#createArchive" style="-fx-background-color: #009999;" text="CREATE">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
