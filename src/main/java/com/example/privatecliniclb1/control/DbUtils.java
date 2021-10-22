@@ -32,7 +32,7 @@ public class DbUtils {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }
+
     }
 
     public static Patient getPatient(String login, Connection connection, PreparedStatement preparedStatement) throws SQLException {

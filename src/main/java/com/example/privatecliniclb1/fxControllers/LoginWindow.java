@@ -37,12 +37,14 @@ public class LoginWindow {
                 FXMLLoader fxmlLoader = new FXMLLoader(StartProgram.class.getResource("menu-window.fxml"));
                 Parent root = fxmlLoader.load();
 
+                MenuWindow menuWindow = fxmlLoader.getController();
+                menuWindow.setUser(user);
+
                 Scene scene = new Scene(root);
-                Stage stage = new Stage();
+                Stage stage = (Stage) loginF.getScene().getWindow();
                 stage.setTitle("FP_Clinic System");
                 stage.setScene(scene);
-                stage.initModality(Modality.APPLICATION_MODAL);
-                stage.showAndWait();
+                stage.show();
             }
         }else {
             alertMessage("Please, fill out all fields");

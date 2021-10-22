@@ -1,5 +1,7 @@
-package com.example.privatecliniclb1;
+package com.example.privatecliniclb1.fxControllers;
 
+import com.example.privatecliniclb1.StartProgram;
+import com.example.privatecliniclb1.ds.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,13 +14,37 @@ import java.io.IOException;
 
 public class MenuWindow {
     public Button users_form;
+    public Button archive_form;
     public Button new_archive;
 
-    public void getForms(ActionEvent actionEvent) throws IOException {
+    private User currentUser;
+
+    public void setUser(User user){
+        this.currentUser = user;
+    }
+
+    public void getUserForms(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(StartProgram.class.getResource("all-users-form.fxml"));
         Parent root = fxmlLoader.load();
 
         Scene scene = new Scene(root);
+
+        Stage stage = new Stage();
+        stage.setTitle("FP_Clinic System");
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+    }
+
+    public void getArchiveForms(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(StartProgram.class.getResource("all-archive-form.fxml"));
+        Parent root = fxmlLoader.load();
+
+        AllArchiveForm allArchiveForm = fxmlLoader.getController();
+        allArchiveForm.setUser(currentUser);
+
+        Scene scene = new Scene(root);
+
         Stage stage = new Stage();
         stage.setTitle("FP_Clinic System");
         stage.setScene(scene);
@@ -29,13 +55,14 @@ public class MenuWindow {
     public void getArchive(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(StartProgram.class.getResource("new-archive-form.fxml"));
         Parent root = fxmlLoader.load();
-
+        NewArchiveForm newArchiveForm = fxmlLoader.getController();
+        newArchiveForm.setUser(currentUser);
         Scene scene = new Scene(root);
-        Stage stage = new Stage();
+
+        Stage stage = (Stage) users_form.getScene().getWindow();
         stage.setTitle("FP_Clinic System");
         stage.setScene(scene);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.showAndWait();
+        stage.show();
     }
 
     public void returnToLogin() throws IOException {
@@ -43,10 +70,11 @@ public class MenuWindow {
         FXMLLoader fxmlLoader = new FXMLLoader(StartProgram.class.getResource("login-window.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        Stage stage = new Stage();
+        Stage stage = (Stage) users_form.getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
+
 
 
 }

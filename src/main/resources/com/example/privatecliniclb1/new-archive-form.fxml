@@ -7,26 +7,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="399.0" prefWidth="372.0" style="-fx-background-color: CCFFE5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.privatecliniclb1.fxControllers.NewArchiveForm">
+<AnchorPane prefHeight="418.0" prefWidth="372.0" style="-fx-background-color: CCFFE5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.privatecliniclb1.fxControllers.NewArchiveForm">
    <children>
-      <TextField fx:id="archiveTitle" layoutX="119.0" layoutY="66.0" prefHeight="26.0" prefWidth="238.0" />
-      <TextArea fx:id="archiveDesc" layoutX="119.0" layoutY="114.0" prefHeight="170.0" prefWidth="238.0" />
-      <Label layoutX="116.0" layoutY="20.0" prefHeight="26.0" prefWidth="139.0" text="NEW ARCHIVE">
+      <TextField fx:id="archiveTitle" layoutX="119.0" layoutY="110.0" prefHeight="26.0" prefWidth="238.0" />
+      <TextArea fx:id="archiveDesc" layoutX="119.0" layoutY="156.0" prefHeight="170.0" prefWidth="238.0" />
+      <Label layoutX="116.0" layoutY="62.0" prefHeight="26.0" prefWidth="139.0" text="NEW ARCHIVE">
          <font>
             <Font name="Cambria" size="21.0" />
          </font></Label>
-      <Label layoutX="14.0" layoutY="68.0" text="Title:">
+      <Label layoutX="14.0" layoutY="112.0" text="Title:">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="18.0" />
          </font></Label>
-      <Label layoutX="12.0" layoutY="114.0" text="Description:">
+      <Label layoutX="14.0" layoutY="156.0" text="Description:">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="18.0" />
          </font></Label>
-      <Button layoutX="150.0" layoutY="329.0" mnemonicParsing="false" onAction="#createArchive" style="-fx-background-color: #009999;" text="CREATE">
+      <Button layoutX="150.0" layoutY="355.0" mnemonicParsing="false" onAction="#createArchive" style="-fx-background-color: #009999;" text="CREATE">
          <font>
             <Font name="Cambria Bold" size="14.0" />
          </font>
       </Button>
+      <Button layoutX="297.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToLogin" style="-fx-background-color: #00BCB8;" text="Cancel" />
    </children>
 </AnchorPane>

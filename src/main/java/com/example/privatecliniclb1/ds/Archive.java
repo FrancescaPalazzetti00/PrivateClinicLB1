@@ -6,7 +6,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,7 +17,7 @@ public class Archive implements Serializable {
     private String archiveName;
     private String archiveDescription;
     private LocalDate dateCreated;
-    private Date endDate;
+    private LocalDate dateModified;
     @ManyToMany
     private List<User> responsibleUsers;
     @ManyToMany(mappedBy = "myArchives", cascade = {CascadeType.PERSIST})
@@ -34,12 +34,12 @@ public class Archive implements Serializable {
     private List<User> admin;
 
 
-    public Archive(int id, String archiveName, String archiveDescription, LocalDate dateCreated, Date endDate, List<User> responsibleUsers, List<Patient> patients, List<Folder> folders) {
+    public Archive(int id, String archiveName, String archiveDescription, LocalDate dateCreated, LocalDate dateModified, List<User> responsibleUsers, List<Patient> patients, List<Folder> folders) {
         this.id = id;
         this.archiveName = archiveName;
         this.archiveDescription = archiveDescription;
         this.dateCreated = dateCreated;
-        this.endDate = endDate;
+        this.dateModified = dateModified;
         this.responsibleUsers = responsibleUsers;
         this.patients = patients;
         this.folders = folders;
@@ -49,10 +49,24 @@ public class Archive implements Serializable {
 
     }
 
+    public Archive(int id, String archiveName, String archiveDescription) {
+        this.id = id;
+        this.archiveName = archiveName;
+        this.archiveDescription = archiveDescription;
+        this.dateCreated = LocalDate.now();
+        this.dateModified = LocalDate.now();
+    }
+
     public Archive(String archiveName, String archiveDescription) {
         this.archiveName = archiveName;
         this.archiveDescription = archiveDescription;
         this.dateCreated = LocalDate.now();
+        this.dateModified = LocalDate.now();
+        this.responsibleUsers = new ArrayList<>();
+        this.patients = new ArrayList<>();
+        this.folders = new ArrayList<>();
+        this.admin = new ArrayList<>();
+
     }
 
     public int getId() {
@@ -87,12 +101,12 @@ public class Archive implements Serializable {
         this.dateCreated = dateCreated;
     }
 
-    public Date getEndDate() {
-        return endDate;
+    public LocalDate getDateModified() {
+        return dateModified;
     }
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public void setDateModified(LocalDate dateModified) {
+        this.dateModified = dateModified;
     }
 
     public List<User> getResponsibleUsers() {

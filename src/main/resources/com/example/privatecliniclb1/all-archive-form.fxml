@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="494.0" prefWidth="909.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.privatecliniclb1.fxControllers.AllArchiveForm">
+   <children>
+      <TableView fx:id="archiveTable" prefHeight="494.0" prefWidth="977.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="40.000030517578125" text="id" />
+            <TableColumn fx:id="colCreated" prefWidth="90.39999389648438" text="dateCreated" />
+            <TableColumn fx:id="colModified" prefWidth="96.0" text="dateModified" />
+            <TableColumn fx:id="colTitle" prefWidth="62.39996337890625" text="title" />
+            <TableColumn fx:id="colDescription" prefWidth="92.7999267578125" text="description" />
+            <TableColumn fx:id="dummyField" prefWidth="75.0" text="Action" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

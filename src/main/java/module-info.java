@@ -13,7 +13,7 @@ module com.example.privatecliniclb1 {
     exports com.example.privatecliniclb1;
     exports com.example.privatecliniclb1.ds to org.hibernate.orm.core, java.persistence;
     opens com.example.privatecliniclb1.ds to org.hibernate.orm.core;
-    exports com.example.privatecliniclb1.fxControllers to javafx.fxml;
-    opens com.example.privatecliniclb1.fxControllers to javafx.fxml, javafx.base;
+    exports com.example.privatecliniclb1.fxControllers;
+    opens com.example.privatecliniclb1.fxControllers to java.persistence, javafx.base, javafx.fxml, org.hibernate.orm.core;
 
 }
