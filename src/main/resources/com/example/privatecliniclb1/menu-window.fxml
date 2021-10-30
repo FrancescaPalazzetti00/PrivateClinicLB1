@@ -5,25 +5,40 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="348.0" prefWidth="321.0" style="-fx-background-color: CCFFE5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.privatecliniclb1.fxControllers.MenuWindow">
+<AnchorPane prefHeight="410.0" prefWidth="521.0" style="-fx-background-color: CCFFE5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.privatecliniclb1.fxControllers.MenuWindow">
    <children>
-      <Button fx:id="users_form" layoutX="57.0" layoutY="116.0" mnemonicParsing="false" onAction="#getUserForms" prefHeight="51.0" prefWidth="206.0" style="-fx-background-color: #009999;" text="Users Form">
+      <Button fx:id="users_form" layoutX="25.0" layoutY="116.0" mnemonicParsing="false" onAction="#getUserForms" prefHeight="52.0" prefWidth="238.0" style="-fx-background-color: #009999;" text="Users Form">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="new_archive" layoutX="57.0" layoutY="249.0" mnemonicParsing="false" onAction="#getArchive" prefHeight="51.0" prefWidth="206.0" style="-fx-background-color: #009999;" text="New Archive">
+      <Button fx:id="new_archive" layoutX="293.0" layoutY="155.0" mnemonicParsing="false" onAction="#getArchive" prefHeight="51.0" prefWidth="206.0" style="-fx-background-color: #009999;" text="New Archive">
          <font>
             <Font name="Century Gothic" size="25.0" />
          </font>
       </Button>
-      <Label layoutX="102.0" layoutY="39.0" prefHeight="50.0" prefWidth="115.0" text="MENU">
+      <Label layoutX="205.0" layoutY="40.0" prefHeight="50.0" prefWidth="115.0" text="MENU">
          <font>
             <Font name="Cambria Bold" size="40.0" />
          </font>
       </Label>
-      <Button layoutX="263.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToLogin" style="-fx-background-color: #00BCB8;" text="Cancel" />
-      <Button fx:id="archive_form" layoutX="57.0" layoutY="181.0" mnemonicParsing="false" onAction="#getArchiveForms" prefHeight="51.0" prefWidth="206.0" style="-fx-background-color: #009999;" text="Archive Form">
+      <Button layoutX="463.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToLogin" style="-fx-background-color: #00BCB8;" text="Cancel" />
+      <Button fx:id="archive_form" layoutX="25.0" layoutY="181.0" mnemonicParsing="false" onAction="#getArchiveForms" prefHeight="51.0" prefWidth="238.0" style="-fx-background-color: #009999;" text="Archive Form">
+         <font>
+            <Font name="Century Gothic" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="folder_form" layoutX="25.0" layoutY="247.0" mnemonicParsing="false" onAction="#getFolderForms" prefHeight="51.0" prefWidth="238.0" style="-fx-background-color: #009999;" text="Folder Form">
+         <font>
+            <Font name="Century Gothic" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="document_form" layoutX="25.0" layoutY="310.0" mnemonicParsing="false" onAction="#getDocumentForms" prefHeight="51.0" prefWidth="238.0" style="-fx-background-color: #009999;" text="Document Form">
+         <font>
+            <Font name="Century Gothic" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="new_folder" layoutX="293.0" layoutY="221.0" mnemonicParsing="false" onAction="#getFolder" prefHeight="51.0" prefWidth="206.0" style="-fx-background-color: #009999;" text="New Folder">
          <font>
             <Font name="Century Gothic" size="25.0" />
          </font>

@@ -7,6 +7,9 @@ module com.example.privatecliniclb1 {
     requires java.sql;
     requires java.desktop;
     requires java.persistence;
+    requires spring.context;
+    requires spring.core;
+    requires spring.web;
 
 
     opens com.example.privatecliniclb1 to javafx.fxml, org.hibernate.orm.core, java.persistence;

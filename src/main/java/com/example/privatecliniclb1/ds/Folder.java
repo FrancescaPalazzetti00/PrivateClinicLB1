@@ -6,6 +6,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -27,7 +28,7 @@ public class Folder implements Serializable {
     @OneToMany(mappedBy ="folder", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @OrderBy("id ASC")
     @LazyCollection(LazyCollectionOption.FALSE)
-    private List<Document> documents;
+    private List<Document> documents = new ArrayList<>();
     @ManyToOne
     private Archive parentArchive;
 
@@ -43,6 +44,14 @@ public class Folder implements Serializable {
     }
 
     public Folder() {
+    }
+
+    public Folder(String folderName) {
+        this.folderName = folderName;
+        this.dateCreated = LocalDate.now();
+        this.editors = new ArrayList<>();
+        this.documents = new ArrayList<>();
+
     }
 
     public int getId() {

@@ -122,5 +122,8 @@ public class User implements Serializable {
         this.myDocuments = myDocuments;
     }
 
-
+    @Override
+    public String toString() {
+        return "User: " + login;
+    }
 }

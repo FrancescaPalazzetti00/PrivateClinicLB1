@@ -3,6 +3,7 @@ package com.example.privatecliniclb1.ds;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 @Entity
 public class Document implements Serializable {
@@ -29,6 +30,23 @@ public class Document implements Serializable {
     }
 
     public Document() {
+    }
+
+    public Document(int id, String docName, String docDesc) {
+        this.id = id;
+        this.docName = docName;
+        this.docDesc = docDesc;
+        this.dateCreated = LocalDate.now();
+        this.dateCompleted = LocalDate.now();
+    }
+
+    public Document( String docName, String docDesc) {
+        this.docName = docName;
+        this.docDesc = docDesc;
+        this.dateCreated = LocalDate.now();
+        this.dateCompleted = LocalDate.now();
+        this.folder = new Folder();
+        this.owner = new User();
     }
 
     public int getId() {

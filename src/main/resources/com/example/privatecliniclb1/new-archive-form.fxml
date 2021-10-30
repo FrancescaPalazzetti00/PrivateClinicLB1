@@ -28,6 +28,6 @@
             <Font name="Cambria Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="297.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToLogin" style="-fx-background-color: #00BCB8;" text="Cancel" />
+      <Button layoutX="297.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnTo" style="-fx-background-color: #00BCB8;" text="Cancel" />
    </children>
 </AnchorPane>

@@ -1,6 +1,6 @@
 package com.example.privatecliniclb1.hibernateControllers;
 
-import com.example.privatecliniclb1.ds.Archive;
+import com.example.privatecliniclb1.ds.Document;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -8,11 +8,10 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
-
-public class ArchiveHibController {
+public class DocumentHibController {
     private EntityManagerFactory emf = null;
 
-    public ArchiveHibController(EntityManagerFactory emf) {
+    public DocumentHibController(EntityManagerFactory emf) {
         this.emf = emf;
     }
 
@@ -20,12 +19,12 @@ public class ArchiveHibController {
         return emf.createEntityManager();
     }
 
-    public void createArchive(Archive archive) {
+    public void createDocument(Document document) {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            em.persist(archive);
+            em.persist(document);
             em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -36,12 +35,12 @@ public class ArchiveHibController {
         }
     }
 
-    public void editArchive(Archive archive) {
+    public void editDocument(Document document) {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            em.merge(archive);
+            em.merge(document);
             em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -53,15 +52,15 @@ public class ArchiveHibController {
     }
 
 
-    public List<Archive> getAllArchive() {
-        return getAllArchive(true, -1, -1);
+    public List<Document> getAllDocument() {
+        return getAllDocument(true, -1, -1);
     }
 
-    public List<Archive> getAllArchive(boolean all, int resMax, int resFirst) {
+    public List<Document> getAllDocument(boolean all, int resMax, int resFirst) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery query = em.getCriteriaBuilder().createQuery();
-            query.select(query.from(Archive.class));
+            query.select(query.from(Document.class));
             Query q = em.createQuery(query);
 
             if (!all) {
@@ -80,34 +79,34 @@ public class ArchiveHibController {
         return null;
     }
 
-    public Archive getArchiveById(int id) {
+    public Document getDocumentById(int id) {
         EntityManager em = null;
-        Archive archive = null;
+        Document document= null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            archive = em.getReference(Archive.class, id);
-            archive.getId();
+            document = em.getReference(Document.class, id);
+            document.getId();
             em.getTransaction().commit();
         } catch (Exception e) {
             System.out.println("No such course by given Id");
         }
-        return archive;
+        return document;
     }
 
-    public void removeArchive(int id) {
+    public void removeDocument(int id) {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Archive archive = null;
+            Document document = null;
             try {
-                archive = em.getReference(Archive.class, id);
-                archive.getId();
+                document = em.getReference(Document.class, id);
+                document.getId();
             } catch (Exception e) {
                 System.out.println("No such user by given Id");
             }
-            em.remove(archive);
+            em.remove(document);
             em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -118,3 +117,4 @@ public class ArchiveHibController {
         }
     }
 }
+

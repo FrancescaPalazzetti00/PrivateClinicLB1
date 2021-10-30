@@ -34,7 +34,7 @@ public class AllArchiveForm implements Initializable {
     public TableColumn<ArchiveTableParameters, String> colDescription;
     public TableColumn<ArchiveTableParameters, Void> dummyField;
 
-    private ObservableList<UserTableParameters> data = FXCollections.observableArrayList();
+    private ObservableList<ArchiveTableParameters> data = FXCollections.observableArrayList();
     private User currentUser;
 
     public void setUser(User user) {
@@ -111,7 +111,7 @@ public class AllArchiveForm implements Initializable {
             ArchiveTableParameters archiveTableParameters = new ArchiveTableParameters();
             archiveTableParameters.setarchiveId(a.getId());
             archiveTableParameters.setArchiveDateCreated(a.getDateCreated().toString());
-            //archiveTableParameters.setArchiveDateModified(a.getDateModified().toString());
+            archiveTableParameters.setArchiveDateModified(a.getDateModified().toString());
             archiveTableParameters.setTitle(a.getArchiveName());
             archiveTableParameters.setDescription(a.getArchiveDescription());
 
