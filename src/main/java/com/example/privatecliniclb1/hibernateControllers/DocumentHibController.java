@@ -1,6 +1,8 @@
 package com.example.privatecliniclb1.hibernateControllers;
 
 import com.example.privatecliniclb1.ds.Document;
+import com.example.privatecliniclb1.ds.Folder;
+import com.example.privatecliniclb1.ds.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -106,6 +108,13 @@ public class DocumentHibController {
             } catch (Exception e) {
                 System.out.println("No such user by given Id");
             }
+
+            Folder folder = document.getFolder();
+            folder.getDocuments().remove(document);
+            em.merge(folder);
+            User user = document.getOwner();
+            user.getMyDocuments().remove(document);
+            em.merge(user);
             em.remove(document);
             em.getTransaction().commit();
         } catch (Exception e) {

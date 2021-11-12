@@ -51,8 +51,8 @@ public class AllDocumentForm implements Initializable {
         documentHibController.getAllDocument(true, -1,-1);
 
         colId.setCellValueFactory(new PropertyValueFactory<>("documentId"));
-        colCreated.setCellValueFactory(new PropertyValueFactory<>("dateCreated"));
-        colModified.setCellValueFactory(new PropertyValueFactory<>("dateModified"));
+        colCreated.setCellValueFactory(new PropertyValueFactory<>("documentDateCreated"));
+        colModified.setCellValueFactory(new PropertyValueFactory<>("documentDateModified"));
         colName.setCellValueFactory(new PropertyValueFactory<>("documentName"));
         colName.setCellFactory(TextFieldTableCell.forTableColumn());
         colName.setOnEditCommit(t -> {

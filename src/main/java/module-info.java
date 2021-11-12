@@ -10,6 +10,7 @@ module com.example.privatecliniclb1 {
     requires spring.context;
     requires spring.core;
     requires spring.web;
+    requires com.google.gson;
 
 
     opens com.example.privatecliniclb1 to javafx.fxml, org.hibernate.orm.core, java.persistence;

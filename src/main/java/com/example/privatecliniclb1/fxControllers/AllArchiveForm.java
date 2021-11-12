@@ -51,8 +51,8 @@ public class AllArchiveForm implements Initializable {
         archiveHibController.getAllArchive(true, -1,-1);
 
         colId.setCellValueFactory(new PropertyValueFactory<>("archiveId"));
-        colCreated.setCellValueFactory(new PropertyValueFactory<>("dateCreated"));
-        colModified.setCellValueFactory(new PropertyValueFactory<>("dateModified"));
+        colCreated.setCellValueFactory(new PropertyValueFactory<>("archiveDateCreated"));
+        colModified.setCellValueFactory(new PropertyValueFactory<>("archiveDateModified"));
         colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         colTitle.setCellFactory(TextFieldTableCell.forTableColumn());
         colTitle.setOnEditCommit(t -> {

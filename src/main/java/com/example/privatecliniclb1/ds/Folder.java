@@ -17,15 +17,15 @@ public class Folder implements Serializable {
     private int id;
     private String folderName;
     private LocalDate dateCreated;
-    @OneToMany(mappedBy = "parentFolder", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(mappedBy = "parentFolder", orphanRemoval = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @OrderBy("id ASC")
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Folder> subFolders;
     @ManyToOne
     private Folder parentFolder;
     @ManyToMany
-    private List<User> editors;
-    @OneToMany(mappedBy ="folder", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<User> editors = new ArrayList<>();
+    @OneToMany(mappedBy ="folder", orphanRemoval = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @OrderBy("id ASC")
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Document> documents = new ArrayList<>();
@@ -44,6 +44,9 @@ public class Folder implements Serializable {
     }
 
     public Folder() {
+        this.dateCreated = LocalDate.now();
+        this.editors = new ArrayList<>();
+        this.documents = new ArrayList<>();
     }
 
     public Folder(String folderName) {

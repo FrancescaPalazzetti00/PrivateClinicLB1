@@ -1,6 +1,8 @@
 package com.example.privatecliniclb1.hibernateControllers;
 
 import com.example.privatecliniclb1.ds.Archive;
+import com.example.privatecliniclb1.ds.Folder;
+import com.example.privatecliniclb1.ds.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -107,6 +109,9 @@ public class ArchiveHibController {
             } catch (Exception e) {
                 System.out.println("No such user by given Id");
             }
+            //User user = (User) archive.getResponsibleUsers();
+            //user.getMyAdminArchives().remove(archive);
+            //em.merge(user);
             em.remove(archive);
             em.getTransaction().commit();
         } catch (Exception e) {

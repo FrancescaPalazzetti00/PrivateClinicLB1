@@ -55,21 +55,27 @@ public class NewFolderForm {
     }
 
     public void addNewDocument(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(StartProgram.class.getResource("new-document-form.fxml"));
-        Parent root = fxmlLoader.load();
 
-        Folder folder = new Folder();
+        if (!folderName.getText().trim().isEmpty()) {
+            FXMLLoader fxmlLoader = new FXMLLoader(StartProgram.class.getResource("new-document-form.fxml"));
+            Parent root = fxmlLoader.load();
 
-        NewDocumentForm newDocumentForm = fxmlLoader.getController();
-        newDocumentForm.setFolder(folder);
+            Folder folder = new Folder();
 
-        Scene scene = new Scene(root);
+            NewDocumentForm newDocumentForm = fxmlLoader.getController();
+            newDocumentForm.setFolder(folder);
+            newDocumentForm.setUser(currentUser);
 
-        Stage stage = new Stage();
-        stage.setTitle("FP_Clinic System");
-        stage.setScene(scene);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.showAndWait();
+            Scene scene = new Scene(root);
+
+            Stage stage = new Stage();
+            stage.setTitle("FP_Clinic System");
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        }else {
+            alertMessage("Please, fill out all fields");
+        }
     }
 
     public void returnTo(ActionEvent actionEvent) throws IOException {
